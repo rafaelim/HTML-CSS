@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+}
+
+hr {
+    display: none;
+}
+
+// Mixins
+
+@mixin bottle($width:64%, $cl1:0, $cl2:0) {
+    width: $width;
+    margin: $cl1 auto $cl2;
+
+    @media screen and(max-width: 1024px) {
+        width: 90%;
+    }
+
+    @media screen and(max-width: 800px) {
+        width: 95%;
+    }
+    
+    @media screen and(max-width: 400px) {
+        width: 100%;
+    }
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 20px;
+    background-color: #333;
+    color: #FFF;
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__bottle {
+        @include bottle()
+    }
+
+    &__relevant1 {
+        font-size: 1rem;
+    }
+}
+
+.content {
+    padding: 20px;
+
+    &__sidebar {
+        background-color: #999;
+        color: #FFF;
+    }
+
+    &__main {
+        background-color: #DDD;
+    }
+}
+
+.footer {
+    height: 200px;
+    padding: 20px;
+    background-color: #000;
+    color: #FFF;
+}
