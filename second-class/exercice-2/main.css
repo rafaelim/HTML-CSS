@@ -48,14 +48,44 @@ hr {
 }
 
 .content {
+  height: 500px;
+  background-color: #DDD;
   padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media screen and (max-width: 400px) {
+  .content {
+    flex-wrap: wrap;
+  }
 }
 .content__sidebar {
-  background-color: #999;
+  background-color: #666;
   color: #FFF;
+  width: 30%;
+  height: 100%;
+  flex-grow: 1;
+}
+@media screen and (max-width: 400px) {
+  .content__sidebar {
+    width: 100%;
+    height: 50%;
+  }
 }
 .content__main {
-  background-color: #DDD;
+  background-color: #AAA;
+  width: 70%;
+  height: 100%;
+  flex-grow: 1;
+}
+@media screen and (max-width: 400px) {
+  .content__main {
+    width: 100%;
+    height: 50%;
+    order: -1;
+  }
 }
 
 .footer {
